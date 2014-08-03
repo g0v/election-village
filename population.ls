@@ -47,6 +47,7 @@ download = (list) ->
         if name=="全國" => name = target.1
         # last member is vote rate, 0 < rate < 100. for filtering out heading rows
         rate = parseFloat(data.4)
+        data = data.map (v,i) -> if i < 4 => parseInt(v) else parseFloat(v)
         if !isNaN(rate) and rate < 100 => population[name] = data
 
       fs.write-file-sync \data/population.json, JSON.stringify(population)

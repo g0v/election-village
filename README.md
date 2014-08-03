@@ -19,8 +19,9 @@ Usage
 執行爬蟲程式:
 
     node_modules/.bin/lsc main.ls
+    node_modules/.bin/lsc population.ls
 
-結果儲存在 data/region.json, application/json 格式, 範例:
+選舉資訊及結果儲存在 data/region.json, application/json 格式, 範例:
 
     {
         "宜蘭縣蘇澳鎮龍德里": [
@@ -30,6 +31,18 @@ Usage
         ], 
         ...
     }
+
+各區域投票人數及投票率則存在 data/population.json, application/json 格式, 範例:
+
+    {
+        # 地區名. 請注意, 非直轄市的資料只有到 "鄉鎮" 等級!
+        "臺北市北投區建民里第0002投開票所": [
+            #選舉人數  投票數  有效票數  無效票數  投票率
+            1609,      1182,   1131,     51,       73.46
+        ],
+        ...
+    }
+
 
 License
 ---------------
