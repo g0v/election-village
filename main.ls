@@ -33,7 +33,7 @@ vlist-fail = {}
 download-done = ->
   if vlist-fail.length >0 =>
     console.log "there are failed items:"
-    for item in vlist-fail => console.log "  * ", vlist
+    for item in vlist-fail => console.log "  * ", item
   else
     console.log "all data fetched."
 
