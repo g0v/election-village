@@ -43,6 +43,10 @@ Usage
         ...
     }
 
+NOTE
+---------------
+
+population.big5.csv, region.big5.csv 因為中文字轉換問題有些字有錯，使用時請自行注意。
 
 License
 ---------------
