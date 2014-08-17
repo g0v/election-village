@@ -12,12 +12,15 @@
     <!-- custom files-->
     <link rel="stylesheet" type="text/css" href="index.css">
     <script type="text/javascript" src="chart.min.js"></script>
+    <script type="text/javascript" src="topojson.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body ng-app ng-controller="main">
     <div id="content">
       <h3>村里長年齡層分佈</h3>
       <canvas id="chart1"></canvas>
+      <h3>村里長政黨分佈</h3>
+      <svg id="twsvg" width="100%" height="1600px" viewBox="0 0 800 1600" preserveAspectRatio="xMidYMid"></svg>
     </div>
   </body>
 </html>
