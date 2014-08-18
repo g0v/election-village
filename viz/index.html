@@ -7,8 +7,8 @@
     <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
     <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/semantic-ui/0.9.5/css/semantic.min.css">
-    <script type="text/javascript" src="assets/semantic-ui/0.9.5/js/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <!-- custom files-->
     <link rel="stylesheet" type="text/css" href="index.css">
     <script type="text/javascript" src="chart.min.js"></script>
@@ -19,7 +19,11 @@
     <div id="content">
       <h3>村里長年齡層分佈</h3>
       <canvas id="chart1"></canvas>
-      <h3>村里長政黨分佈</h3>
+      <h3>村里長地理分佈</h3>
+      <div ng-click="showtype=1" ng-class="{'active':showtype==1}" class="btn btn-default">年紀分佈</div>
+      <div ng-click="showtype=2" ng-class="{'active':showtype==2}" class="btn btn-default">政黨分佈</div>
+      <div ng-click="showtype=3" ng-class="{'active':showtype==3}" class="btn btn-default">性別分佈</div>
+      <div class="pull-right">年紀: 紅(老) &gt; 綠(年輕)<br>性別: 藍(男) / 紅(女)<br>政黨: 灰(無黨籍) / 藍(國民黨) / 綠(民進黨) / 其他...</div>
       <svg id="twsvg" width="100%" height="1600px" viewBox="0 0 800 1600" preserveAspectRatio="xMidYMid"></svg>
     </div>
   </body>

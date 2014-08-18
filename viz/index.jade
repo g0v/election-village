@@ -2,7 +2,7 @@ doctype html
 //- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
 - var usecdn = false
 - var useog = false
-- var lib = { jquery: true, d3js: true, angular: true, bootstrap: false, semantic: true }
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
 html(lang="en")
@@ -20,5 +20,14 @@ html(lang="en")
     #content
       h3 村里長年齡層分佈
       canvas#chart1
-      h3 村里長政黨分佈
+      h3 村里長地理分佈
+      .btn.btn-default(ng-click="showtype=1",ng-class="{'active':showtype==1}") 年紀分佈
+      .btn.btn-default(ng-click="showtype=2",ng-class="{'active':showtype==2}") 政黨分佈
+      .btn.btn-default(ng-click="showtype=3",ng-class="{'active':showtype==3}") 性別分佈
+      .pull-right
+        | 年紀: 紅(老) &gt; 綠(年輕)
+        br
+        | 性別: 藍(男) / 紅(女)
+        br
+        | 政黨: 灰(無黨籍) / 藍(國民黨) / 綠(民進黨) / 其他...
       svg#twsvg(width="100%",height="1600px",viewBox="0 0 800 1600",preserveAspectRatio="xMidYMid")
