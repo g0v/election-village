@@ -74,6 +74,10 @@ main = ($scope, $http) ->
         if $scope.showtype==3 => it.properties.sxc
         else if $scope.showtype==2 => it.properties.tpc
         else if $scope.showtype==1 => it.properties.agc
+      .style \stroke ->
+        if $scope.showtype==3 => it.properties.sxc
+        else if $scope.showtype==2 => it.properties.tpc
+        else if $scope.showtype==1 => it.properties.agc
       .style \stroke-width \0.5px
       .style \opacity 1.0
       .on \mouseover (d) -> $scope.$apply -> $scope.chosen = d.properties.name

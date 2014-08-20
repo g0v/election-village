@@ -104,6 +104,14 @@ main = function($scope, $http){
       } else if ($scope.showtype === 1) {
         return it.properties.agc;
       }
+    }).style('stroke', function(it){
+      if ($scope.showtype === 3) {
+        return it.properties.sxc;
+      } else if ($scope.showtype === 2) {
+        return it.properties.tpc;
+      } else if ($scope.showtype === 1) {
+        return it.properties.agc;
+      }
     }).style('stroke-width', '0.5px').style('opacity', 1.0).on('mouseover', function(d){
       return $scope.$apply(function(){
         return $scope.chosen = d.properties.name;
