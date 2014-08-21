@@ -11,32 +11,40 @@ age = function($scope, $http){
   color = d3.scale.category20();
   $scope.chart1 = new Chart(ctx1);
   $scope.raw = {};
-  return $http({
-    url: 'age-chart.json',
-    method: 'GET'
-  }).success(function(chd){
-    chd.datasets = chd.datasets.filter(function(it){
-      return it.label.length > 3 && Math.random() > 0.97;
-    });
-    chd.datasets.map(function(it){
-      var c;
-      c = color(it.label);
-      return import$(it, {
-        fillColor: c,
-        strokeColor: c,
-        pointColor: c,
-        pointStrokeColor: c
-      });
-    });
-    return $scope.chart1.Line(chd, {
-      bezierCurveTension: 0.2,
-      animation: false,
-      datasetFill: false,
-      multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
-    });
-  }).error(function(e){
-    return console.error(e);
+  $scope.type = 1;
+  $scope.$watch('type', function(v){
+    if (v) {
+      return $scope.load();
+    }
   });
+  return $scope.load = function(){
+    return $http({
+      url: $scope.type === 1 ? 'age-chart-group.json' : 'age-chart.json',
+      method: 'GET'
+    }).success(function(chd){
+      chd.datasets = chd.datasets.filter(function(it){
+        return it.label.length > 3 && Math.random() > ($scop.type === 1 ? 0.9 : 0.97);
+      });
+      chd.datasets.map(function(it){
+        var c;
+        c = color(it.label);
+        return import$(it, {
+          fillColor: c,
+          strokeColor: c,
+          pointColor: c,
+          pointStrokeColor: c
+        });
+      });
+      return $scope.chart1.Line(chd, {
+        bezierCurveTension: 0.2,
+        animation: false,
+        datasetFill: false,
+        multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+      });
+    }).error(function(e){
+      return console.error(e);
+    });
+  };
 };
 function import$(obj, src){
   var own = {}.hasOwnProperty;

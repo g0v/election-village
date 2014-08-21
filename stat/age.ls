@@ -32,3 +32,20 @@ data = do
   datasets: datasets
 
 fs.write-file-sync \age-chart.json, JSON.stringify(data)
+
+labels = ["#{y}-#{y+9}" for y from 25 to 85 by 10]
+hash-group = {}
+for k,v of hash
+  hash-group[k] = [0,0,0,0,0,0,0]
+  for y,c of v
+    y = parseInt(y)
+    idx = parseInt(((2015 - y - 1921) - 25) / 10)
+    hash-group[k][idx] += c
+
+datasets = for label, v of hash-group => {label, data: v}
+
+data = do
+  labels: labels
+  datasets: datasets
+
+fs.write-file-sync \age-chart-group.json, JSON.stringify(data)

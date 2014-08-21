@@ -18,4 +18,8 @@ html(lang="en")
   body(ng-app,ng-controller="age")
     #content
       h3 村里長年齡層分佈
+      .text-right
+        select.form-control(ng-model="type")
+          option(value="1") 分組顯示
+          option(value="2") 全部顯示
       canvas#chart1

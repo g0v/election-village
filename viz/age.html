@@ -17,6 +17,12 @@
   <body ng-app ng-controller="age">
     <div id="content">
       <h3>村里長年齡層分佈</h3>
+      <div class="text-right">
+        <select ng-model="type" class="form-control">
+          <option value="1">分組顯示</option>
+          <option value="2">全部顯示</option>
+        </select>
+      </div>
       <canvas id="chart1"></canvas>
     </div>
   </body>
