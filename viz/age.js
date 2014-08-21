@@ -23,7 +23,7 @@ age = function($scope, $http){
       method: 'GET'
     }).success(function(chd){
       chd.datasets = chd.datasets.filter(function(it){
-        return it.label.length > 3 && Math.random() > ($scop.type === 1 ? 0.9 : 0.97);
+        return it.label.length > 3 && Math.random() > ($scope.type === 1 ? 0.9 : 0.97);
       });
       chd.datasets.map(function(it){
         var c;

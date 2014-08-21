@@ -14,7 +14,7 @@ age = ($scope, $http) ->
       url: if $scope.type == 1 => \age-chart-group.json else \age-chart.json
       method: \GET
     .success (chd) ->
-      chd.datasets = chd.datasets.filter(-> it.label.length > 3 and Math.random! > (if $scop.type==1 => 0.9 else 0.97))
+      chd.datasets = chd.datasets.filter(-> it.label.length > 3 and Math.random! > (if $scope.type==1 => 0.9 else 0.97))
       chd.datasets.map ->
         c = color it.label
         it <<< do
