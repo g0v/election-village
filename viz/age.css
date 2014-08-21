@@ -1,0 +1,13 @@
+svg {
+  border: 1px solid #999999;
+  height: 50px; }
+  svg.stack {
+    margin: 0 20px; }
+
+.cell {
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  margin: 10px;
+  line-height: 64px;
+  text-align: center; }

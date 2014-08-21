@@ -11,6 +11,7 @@
     <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <!-- custom files-->
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="age.css">
     <script type="text/javascript" src="chart.min.js"></script>
     <script type="text/javascript" src="age.js"></script>
   </head>
@@ -24,6 +25,7 @@
         </select>
       </div>
       <canvas id="chart1"></canvas>
+      <div ng-repeat="i in [0,1,2,3,4,5]" ng-attr-style="background:{{color(i)}}" class="cell">{{i * 10 + 25}} ~ {{i * 10 + 35}}</div>
     </div>
   </body>
 </html>

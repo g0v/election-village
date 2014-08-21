@@ -13,6 +13,7 @@ html(lang="en")
     include library.jade
     // custom files
     link(rel="stylesheet",type="text/css",href="index.css")
+    link(rel="stylesheet",type="text/css",href="age.css")
     script(type="text/javascript",src="chart.min.js")
     script(type="text/javascript",src="age.js")
   body(ng-app,ng-controller="age")
@@ -23,3 +24,5 @@ html(lang="en")
           option(value="1") 分組顯示
           option(value="2") 全部顯示
       canvas#chart1
+      .cell(ng-repeat="i in [0,1,2,3,4,5]",ng-attr-style="background:{{color(i)}}")
+        | {{i * 10 + 25}} ~ {{i * 10 + 35}}
