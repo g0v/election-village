@@ -84,11 +84,9 @@ age = function($scope, $http, $timeout){
       url: $scope.type === 1 ? 'age-chart-group.json' : 'age-chart.json',
       method: 'GET'
     }).success(function(chd){
-      return $timeout(function(){
-        if ($scope.type === 1) {
-          return $scope.stack(chd);
-        }
-      }, 1000);
+      if ($scope.type === 1) {
+        return $scope.stack(chd);
+      }
     });
     return $http({
       url: $scope.type === 1 ? 'age-chart-group.json' : 'age-chart.json',

@@ -49,7 +49,7 @@ age = ($scope, $http, $timeout) ->
       url: if $scope.type == 1 => \age-chart-group.json else \age-chart.json
       method: \GET
     .success (chd) ->
-      if $scope.type == 1 => $scope.stack chd)
+      if $scope.type == 1 => $scope.stack chd
     $http do
       url: if $scope.type == 1 => \age-chart-group.json else \age-chart.json
       method: \GET
