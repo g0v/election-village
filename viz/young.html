@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="young.css">
+    <script type="text/javascript" src="chart.min.js"></script>
+    <script type="text/javascript" src="young.js"></script>
+  </head>
+  <body ng-app ng-controller="young">
+    <div id="content">
+      <div ng-repeat="v in rate" class="item">
+        <div class="name">{{v[0]}}</div>
+        <div class="voterate">{{v[1].rate}}</div>
+        <div class="youngrate">{{v[1].youngrate}}</div>
+      </div>
+    </div>
+    <svg id="svg" width="1000px" height="500px" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></svg>
+  </body>
+</html>
