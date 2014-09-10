@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="now.css">
+    <link rel="stylesheet" type="text/css" href="c3.css">
+    <script type="text/javascript" src="chart.min.js"></script>
+    <script type="text/javascript" src="d3js.min.js"></script>
+    <script type="text/javascript" src="c3.min.js"></script>
+    <script type="text/javascript" src="now.js"></script>
+  </head>
+  <body ng-app ng-controller="now">
+    <div class="chart">
+      <h3>各縣市同額競選之村里占總村里數之比例</h3>
+      <div id="single-rate"></div>
+    </div>
+    <div class="chart">
+      <h3>政黨比例之變化</h3>
+      <div id="party-rate"></div>
+    </div>
+    <div class="chart">
+      <h3>少數政黨比例之變化</h3>
+      <div id="party-rate-minor"></div>
+    </div>
+    <div class="chart">
+      <h3>競爭最激烈的前幾名村里</h3>
+      <div id="compete"></div>
+    </div>
+    <div class="chart">
+      <h3>各種競爭人數的村里數統計</h3>
+      <div id="compete-stat"></div>
+    </div>
+  </body>
+</html>

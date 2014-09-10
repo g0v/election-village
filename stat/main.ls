@@ -8,6 +8,7 @@ for k,v of data
   i = k.indexOf "區"
   if i<0 => i = k.indexOf "鄉"
   if i<0 => i = k.indexOf "鎮"
+  if i<0 => i = k.indexOf "市"
   if i > 6 => i = 6
   k2 = k.substring(0,i + 1)
   age1[k2] = []
@@ -16,8 +17,9 @@ for k,v of data
   i = k.indexOf "區"
   if i<0 => i = k.indexOf "鄉"
   if i<0 => i = k.indexOf "鎮"
+  if i<0 => i = k.indexOf "市"
   if i > 6 => i = 6
-  k2 = k.substring(0,i + 1)
+  if !k2 => console.log k
   for p in v
     age1[k2].push p.3
     if p.7 => age2[k2].push p.3

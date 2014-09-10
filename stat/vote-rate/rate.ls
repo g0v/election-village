@@ -33,4 +33,9 @@ for line in lines
   else
     console.log "bug: ", name
 
+winner = JSON.parse(fs.read-file-sync \../winner.json)
+for k,v of winner =>
+  if k of hash => hash[k].party = v
+  else console.log "not exist: #k"
+
 fs.write-file-sync \young-rate.json, JSON.stringify(hash)
